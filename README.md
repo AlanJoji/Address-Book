@@ -4,7 +4,7 @@
 
 # Address Book
 
-An address book that helps to store and access contact information. Built using C. 
+An address book that helps to store and access contact information 📒. Built using C. 
 
 ## Features
 
