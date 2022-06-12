@@ -26,7 +26,7 @@ An address book that helps to store and access contact information 📒. Built u
 
 - [Alan Joji](https://github.com/AlanJoji)
 - [Aniket Choudhary](https://github.com/aniket0520)
-- [Aditya Gouniyal](https://github.com/akshatg131)
+- [Akshat Gouniyal](https://github.com/akshatg131)
 
 
 
