@@ -19,31 +19,27 @@ struct address
     char location[LOC_LIMIT];
 };
 
-int num;
+int num;//Number of contacts
 struct address ad[100];  
-
 
 // Function definitions
 int add_select ()
 {
-    printf("Add a contact"); 
+    printf("\nAdding a contact");
 
     printf("\nEnter a name : ");
-    fgets(ad[num].name, NAME_LIMIT, stdin);
-
+    fflush(stdin);
+    scanf("%[^\n]s", ad[num].name);
 
     printf("\nEnter a phone number : ");
     scanf("%ld", &ad[num].phone);
 
     printf("\nEnter an address : ");
-    fgets(ad[num].location, LOC_LIMIT, stdin);
+    fflush(stdin);
+    scanf("%[^\n]s", ad[num].location);
 
     printf("Address has been saved");
-
-    for(int j=0;j<1;j++)
-    {    
-        printf("Name:%s", ad[j].name);    
-    }
+    
     num++;
 
     return 0;
@@ -51,8 +47,23 @@ int add_select ()
 
 int view_select ()
 {
-    printf("View saved contacts");    
+    printf("\nView saved contacts"); 
 
+    if (num != 0)
+    {
+        int i;
+
+        for (i = 0; i < num; i++)
+        {
+            printf("\nName : %s", ad[i].name);
+            printf("\nPhone : %ld", ad[i].phone);
+            printf("\nLocation : %s", ad[i].location);
+            printf("\n==========================");
+        }
+    }
+
+    else
+        return 1;
 
     return 0;
 }
@@ -92,7 +103,7 @@ int exit_select ()
 // Main Function
 int main ()
 {
-    printf("Welcome to the Address Book");
+    printf("\n\nWelcome to the Address Book");
 
     printf("\n\n+============+============+");
 
@@ -141,6 +152,7 @@ int main ()
         printf("Invalid Option");
         break;
     }
+    main();
 
     return 0;
 }
