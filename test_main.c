@@ -1,6 +1,6 @@
 /* 
 Address book 
-Created by  Akshat Gouniyal, Alan Joji, Aniket Choudhary
+Created by Alan Joji, Aniket Choudhary, Akshat Gouniyal
 Date : 07/06/2022
 */
 
@@ -143,12 +143,15 @@ int delete_select ()
 int export_select ()
 {
     printf("Export contacts to a file");
+
     FILE *file1;
     file1=fopen("phonebook.txt","w");
+
     if(file1==NULL)
     {
         printf("Contacts were not exported");
     }
+
     else
     {
         if (num != 0)
@@ -164,14 +167,15 @@ int export_select ()
                 printf("\n==========================");
             }
         }
+
         else
         {
             return 1;
         }
     }
+
     fclose(file1);
-    return 0;
-    
+    return 0; 
 }
 
 int search_select ()
