@@ -78,7 +78,7 @@ int edit_select ()
         int i;
         for(i=0;i<num;i++)
             {
-                 printf("%d : ",i+1);
+                printf("%d : ",i+1);
                 printf("\nName : %s", ad[i].name);
                 printf("\nPhone : %ld", ad[i].phone);
                 printf("\nLocation : %s", ad[i].location);
@@ -141,12 +141,34 @@ int delete_select ()
 
 int export_select ()
 {
-    printf("Export contacts to a file");    
-  
+    printf("Export contacts to a file");
+    FILE *file1;
+    file1=fopen("phonebook1.txt","w");
+    if(file1==NULL){
+        printf("can't fined a source file to store data");
+    }
+    else{
+        if (num != 0)
+        {
+            int i;
+
+            for (i = 0; i < num; i++)
+            {
+                printf("\nName : %s", ad[i].name);
+                printf("\nPhone : %ld", ad[i].phone);
+                printf("\nLocation : %s", ad[i].location);
+                fprintf(file1,"%s\t%d\t%s\n",ad[i].name,ad[i].phone,ad[i].location);
+                printf("\n==========================");
+            }
+        }
+        else{
+            return 1;
+        }
+    }
+    fclose(file1);
     return 0;
+    
 }
-
-
 int exit_select ()
 {
     printf("Thank you!");
