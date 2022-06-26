@@ -7,6 +7,7 @@ Date : 07/06/2022
 // Header files
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define NAME_LIMIT 20
 #define LOC_LIMIT 50
@@ -173,6 +174,47 @@ int export_select ()
     
 }
 
+int search_select ()
+{
+    printf("Search for a saved contact");
+    printf("\nEnter the contact name :");
+
+    fflush(stdin);
+
+    char search_name[NAME_LIMIT];
+
+    scanf("%[^\n]s", search_name);
+
+    if (num != 0)
+    {
+        int i;
+
+        for (i = 0; i < num; i++)
+        {
+            if (strcmp(search_name, ad[i].name) == 0)
+            {
+                printf("%s was found\n\nContact details : ", search_name);
+                printf("\nName : %s", ad[i].name);
+                printf("\nPhone : %ld", ad[i].phone);
+                printf("\nLocation : %s", ad[i].location);
+                printf("\n==========================");
+
+                return 0;
+            }
+            
+            else
+                continue;
+        }
+    }
+    
+    else
+        return 1;
+    
+    printf("\n%s was not found", search_name);
+
+    return 0;
+}
+
 int exit_select ()
 {
     printf("Thank you!");
@@ -192,9 +234,11 @@ int main ()
     printf("\n2. View saved contacts");
     printf("\n3. Edit saved contacts");
     printf("\n4. Delete a saved contact");
-    printf("\n5. Export saved contacts"); // Functionality will be implemented later
+    printf("\n5. Export saved contacts");
+    printf("\n6. Search saved contacts");
 
-    printf("\n6. Exit");
+
+    printf("\n7. Exit");
 
     printf("\n\n+============+============+");
 
@@ -225,7 +269,11 @@ int main ()
         export_select();
         break;
 
-    case 6 : 
+    case 6 :
+        search_select();
+        break;
+
+    case 7 : 
         exit_select();
         break;
 
