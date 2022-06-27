@@ -12,7 +12,7 @@ Date : 07/06/2022
 #define NAME_LIMIT 20
 #define LOC_LIMIT 50
 
-// Structure needs to be implemented
+// Structure needs to be implemented.
 struct address
 {
     long int phone;
