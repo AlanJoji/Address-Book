@@ -7,6 +7,8 @@ Built using C.
 
 ## Features
 
+_Basic CRUD Operations_
+
 - Add Data
 - View Data
 - Change Data
